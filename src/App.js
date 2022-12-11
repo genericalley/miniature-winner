@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import "./App.css";
 
 const SERVER = "https://5e96-168-91-200-234.ngrok.io";
-const FRONTEND = "";
 
 const postChoices = (first, second, third, onFinish, onReject) => {
   fetch(
     `${SERVER}/menu?first=${encodeURIComponent(
       first
-    )}&second=${encodeURIComponent(second)}&third=${encodeURIComponent(third)}`
+    )}&second=${encodeURIComponent(second)}&third=${encodeURIComponent(third)}`,
+    { headers: { "ngrok-skip-browser-warning": "yes" } }
   )
     .then(onFinish)
-    .error(onReject)
     .catch(onReject);
 };
 
