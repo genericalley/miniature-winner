@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./App.css";
 
 const SERVER = "https://5e96-168-91-200-234.ngrok.io";
-const FRONTEND = ""
+const FRONTEND = "";
 
 const postChoices = (first, second, third, onFinish, onReject) => {
   fetch(
-    `http://localhost:8000/menu?first=${encodeURIComponent(
+    `${SERVER}/menu?first=${encodeURIComponent(
       first
     )}&second=${encodeURIComponent(second)}&third=${encodeURIComponent(third)}`
   )
